@@ -307,6 +307,70 @@ git merge --abort
 
 This will stop the merge and revert the repository to its previous state.
 
+### 13. Rename a Branch
+
+To rename the current branch, use:
+
+```sh
+git branch -m <new-branch-name>
+```
+
+Example:
+
+```sh
+$ git branch -m new-branch-name
+```
+
+To rename a different branch, use:
+
+```sh
+git branch -m <old-branch-name> <new-branch-name>
+```
+
+Example:
+
+```sh
+$ git branch -m old-branch-name new-branch-name
+```
+
+### 14. Delete a Branch
+
+To delete a local branch, use:
+
+```sh
+git branch -d <branch-name>
+```
+
+Example:
+
+```sh
+$ git branch -d feature-branch
+```
+
+If the branch has not been merged, you can force delete it using:
+
+```sh
+git branch -D <branch-name>
+```
+
+Example:
+
+```sh
+$ git branch -D feature-branch
+```
+
+To delete a remote branch, use:
+
+```sh
+git push origin --delete <branch-name>
+```
+
+Example:
+
+```sh
+$ git push origin --delete feature-branch
+```
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
