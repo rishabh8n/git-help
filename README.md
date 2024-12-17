@@ -842,6 +842,134 @@ $ git reset --keep 1a2b3c4
 
 Use `git reset` with caution, especially with the `--hard` option, as it can permanently delete changes from your working directory and staging area.
 
+### 21. Add Remote Origin
+
+To add a remote repository (origin) to your local repository, use:
+
+```sh
+git remote add origin <remote-url>
+```
+
+Example:
+
+```sh
+$ git remote add origin https://github.com/username/repo.git
+```
+
+To verify the new remote URL, use:
+
+```sh
+git remote -v
+```
+
+Example:
+
+```sh
+$ git remote -v
+origin  https://github.com/username/repo.git (fetch)
+origin  https://github.com/username/repo.git (push)
+```
+
+### 22. Push Code to Remote Repository
+
+To push your local commits to the remote repository, use:
+
+```sh
+git push origin <branch-name>
+```
+
+Example:
+
+```sh
+$ git push origin main
+```
+
+If you are pushing a new branch, you may need to set the upstream branch:
+
+```sh
+git push --set-upstream origin <branch-name>
+```
+
+Example:
+
+```sh
+$ git push --set-upstream origin feature-branch
+```
+
+### 23. Pull Code from Remote Repository
+
+To fetch and merge changes from the remote repository to your local branch, use:
+
+```sh
+git pull origin <branch-name>
+```
+
+Example:
+
+```sh
+$ git pull origin main
+```
+
+### 24. Clone a Repository
+
+To clone a remote repository to your local machine, use:
+
+```sh
+git clone <remote-url>
+```
+
+Example:
+
+```sh
+$ git clone https://github.com/username/repo.git
+```
+
+This will create a directory named `repo` and initialize a new Git repository in it, containing all the files and commit history from the remote repository.
+
+## Connecting Local Device to GitHub Using SSH Key
+
+### 1. Check for Existing SSH Keys
+
+First, check if you already have an SSH key pair:
+
+```sh
+ls -al ~/.ssh
+```
+
+If you see files named `id_rsa` and `id_rsa.pub`, you already have an SSH key pair.
+
+### 2. Generate a New SSH Key
+
+If you don't have an SSH key pair, generate a new one:
+
+```sh
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+When prompted, press Enter to accept the default file location and name. You can also set a passphrase for added security.
+
+### 3. Add SSH Key to Your GitHub Account
+
+Copy the SSH key to your clipboard:
+
+```sh
+cat ~/.ssh/id_rsa.pub
+```
+
+Go to GitHub, navigate to **Settings > SSH and GPG keys**, and click **New SSH key**. Paste your SSH key into the "Key" field and give it a descriptive title.
+
+### 4. Test SSH Connection
+
+To test your SSH connection to GitHub, run:
+
+```sh
+ssh -T git@github.com
+```
+
+You should see a success message indicating that you have successfully authenticated.
+
+By following these steps, you can securely connect your local device to GitHub using SSH keys.
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
