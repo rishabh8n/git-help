@@ -371,6 +371,247 @@ Example:
 $ git push origin --delete feature-branch
 ```
 
+### 15. View Differences Between Commits
+
+To view the differences between commits, use:
+
+```sh
+git diff <commit1> <commit2>
+```
+
+Example:
+
+```sh
+$ git diff 1a2b3c4 5d6e7f8
+```
+
+To view the differences between the working directory and the staging area, use:
+
+```sh
+git diff
+```
+
+Example:
+
+```sh
+$ git diff
+```
+
+To view the differences between the staging area and the last commit, use:
+
+```sh
+git diff --staged
+```
+
+Example:
+
+```sh
+$ git diff --staged
+```
+
+To view the differences between two branches, use:
+
+```sh
+git diff <branch1> <branch2>
+```
+
+Example:
+
+```sh
+$ git diff main feature-branch
+```
+
+These commands help you see what changes have been made before committing them.
+
+### 16. Stash Changes
+
+To temporarily save changes that are not ready to be committed, use:
+
+```sh
+git stash
+```
+
+Example:
+
+```sh
+$ git stash
+Saved working directory and index state WIP on main: 1a2b3c4 Initial commit
+```
+
+To list all stashes, use:
+
+```sh
+git stash list
+```
+
+Example:
+
+```sh
+$ git stash list
+stash@{0}: WIP on main: 1a2b3c4 Initial commit
+```
+
+To apply the most recent stash, use:
+
+```sh
+git stash apply
+```
+
+Example:
+
+```sh
+$ git stash apply
+```
+
+To apply a specific stash, use:
+
+```sh
+git stash apply stash@{n}
+```
+
+Example:
+
+```sh
+$ git stash apply stash@{0}
+```
+
+To drop a specific stash, use:
+
+```sh
+git stash drop stash@{n}
+```
+
+Example:
+
+```sh
+$ git stash drop stash@{0}
+Dropped stash@{0} (WIP on main: 1a2b3c4 Initial commit)
+```
+
+To clear all stashes, use:
+
+```sh
+git stash clear
+```
+
+Example:
+
+```sh
+$ git stash clear
+```
+
+To apply and remove the most recent stash, use:
+
+```sh
+git stash pop
+```
+
+Example:
+
+```sh
+$ git stash pop
+```
+
+### 17. Tagging
+
+To create a new tag, use:
+
+```sh
+git tag <tag-name>
+```
+
+Example:
+
+```sh
+$ git tag v1.0
+```
+
+To create a new tag with a message, use:
+
+```sh
+git tag -a <tag-name> -m "tag message"
+```
+
+Example:
+
+```sh
+$ git tag -a v1.0 -m "Initial release"
+```
+
+To attach a tag to a specific commit, use:
+
+```sh
+git tag <tag-name> <commit-id>
+```
+
+Example:
+
+```sh
+$ git tag v1.0 1a2b3c4
+```
+
+To list all tags, use:
+
+```sh
+git tag
+```
+
+Example:
+
+```sh
+$ git tag
+v1.0
+```
+
+To show information about a specific tag, use:
+
+```sh
+git show <tag-name>
+```
+
+Example:
+
+```sh
+$ git show v1.0
+```
+
+To push a tag to a remote repository, use:
+
+```sh
+git push origin <tag-name>
+```
+
+Example:
+
+```sh
+$ git push origin v1.0
+```
+
+To delete a local tag, use:
+
+```sh
+git tag -d <tag-name>
+```
+
+Example:
+
+```sh
+$ git tag -d v1.0
+Deleted tag 'v1.0' (was 1a2b3c4)
+```
+
+To delete a remote tag, use:
+
+```sh
+git push origin --delete <tag-name>
+```
+
+Example:
+
+```sh
+$ git push origin --delete v1.0
+```
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
