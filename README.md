@@ -4,6 +4,38 @@
 
 This document provides a quick reference guide for some of the most commonly used Git commands.
 
+## Git Config
+
+### Set User Name
+
+```sh
+git config --global user.name "Your Name"
+```
+
+### Set User Email
+
+```sh
+git config --global user.email "you@example.com"
+```
+
+### Change Default Branch to Main
+
+To change the default branch name to `main` for new repositories, use the following command:
+
+```sh
+git config --global init.defaultBranch main
+```
+
+### Set Default Code Editor for Commits to VSCode
+
+To set Visual Studio Code as the default editor for Git commit messages, use the following command:
+
+```sh
+git config --global core.editor "code --wait"
+```
+
+These configurations are stored in the `.gitconfig` file in your home directory and are used for all your Git repositories.
+
 ## Git Commands
 
 ### 1. Initialize a New Repository
