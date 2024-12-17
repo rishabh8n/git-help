@@ -213,6 +213,34 @@ $ git checkout -b new-feature
 Switched to a new branch 'new-feature'
 ```
 
+### 11. Merge a Branch into Main
+
+To merge changes from a branch into the `main` branch, first switch to the `main` branch:
+
+```sh
+git checkout main
+```
+
+Then, use the `merge` command:
+
+```sh
+git merge <branch-name>
+```
+
+Example:
+
+```sh
+$ git checkout main
+Switched to branch 'main'
+$ git merge feature-branch
+Updating 1a2b3c4..5d6e7f8
+Fast-forward
+ file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+If there are conflicts during the merge, Git will prompt you to resolve them before completing the merge.
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
