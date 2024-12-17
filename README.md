@@ -154,6 +154,65 @@ $ git log --oneline --graph --decorate
 * 1a2b3c4 (HEAD -> master) Initial commit
 ```
 
+### 7. View Current Branch
+
+To view the branch you are currently on, use:
+
+```sh
+git branch
+```
+
+Example:
+
+```sh
+$ git branch
+* master
+```
+
+### 8. Create a New Branch
+
+To create a new branch, use:
+
+```sh
+git branch <branch-name>
+```
+
+Example:
+
+```sh
+$ git branch feature-branch
+```
+
+### 9. Switch to a Branch
+
+To switch to an existing branch, use:
+
+```sh
+git checkout <branch-name>
+```
+
+Example:
+
+```sh
+$ git checkout feature-branch
+Switched to branch 'feature-branch'
+```
+
+### 10. Create and Switch to a New Branch
+
+To create a new branch and switch to it immediately, use:
+
+```sh
+git checkout -b <branch-name>
+```
+
+Example:
+
+```sh
+$ git checkout -b new-feature
+Switched to a new branch 'new-feature'
+```
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
