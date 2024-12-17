@@ -612,6 +612,236 @@ Example:
 $ git push origin --delete v1.0
 ```
 
+### 18. Rebase
+
+To rebase the current branch onto another branch, use:
+
+```sh
+git rebase <branch-name>
+```
+
+Example:
+
+```sh
+$ git rebase main
+```
+
+To interactively rebase, use:
+
+```sh
+git rebase -i <commit-id>
+```
+
+Example:
+
+```sh
+$ git rebase -i HEAD~3
+```
+
+To continue a rebase after resolving conflicts, use:
+
+```sh
+git rebase --continue
+```
+
+Example:
+
+```sh
+$ git rebase --continue
+```
+
+To abort a rebase, use:
+
+```sh
+git rebase --abort
+```
+
+Example:
+
+```sh
+$ git rebase --abort
+```
+
+### 19. Reflog
+
+To view the reference logs, which record when the tips of branches and other references were updated, use:
+
+```sh
+git reflog
+```
+
+Example:
+
+```sh
+$ git reflog
+```
+
+To view the reflog for a specific branch, use:
+
+```sh
+git reflog <branch-name>
+```
+
+Example:
+
+```sh
+$ git reflog main
+```
+
+To delete a specific reflog entry, use:
+
+```sh
+git reflog delete <reflog-entry>
+```
+
+Example:
+
+```sh
+$ git reflog delete HEAD@{1}
+```
+
+To expire reflog entries older than a specific time, use:
+
+```sh
+git reflog expire --expire=<time> --all
+```
+
+Example:
+
+```sh
+$ git reflog expire --expire=30.days.ago --all
+```
+
+To clean up all reflog entries, use:
+
+```sh
+git reflog expire --expire=now --all
+```
+
+Example:
+
+```sh
+$ git reflog expire --expire=now --all
+```
+
+### 20. Git Reset
+
+The `git reset` command is used to undo changes in your working directory and staging area. It can be used to unstage files, revert commits, and move the HEAD pointer to a previous commit.
+
+#### 1. Unstage Files
+
+To unstage a file that has been added to the staging area, use:
+
+```sh
+git reset <file>
+```
+
+Example:
+
+```sh
+$ git reset README.md
+Unstaged changes after reset:
+M	README.md
+```
+
+#### 2. Revert to a Previous Commit
+
+To move the HEAD pointer and the current branch to a previous commit, use:
+
+```sh
+git reset <commit>
+```
+
+Example:
+
+```sh
+$ git reset 1a2b3c4
+```
+
+#### 3. Types of Reset
+
+There are three types of reset operations: `--soft`, `--mixed`, and `--hard`.
+
+- `--soft`: Moves the HEAD pointer to the specified commit, but leaves the staging area and working directory unchanged.
+
+  ```sh
+  git reset --soft <commit>
+  ```
+
+  Example:
+
+  ```sh
+  $ git reset --soft HEAD~1
+  ```
+
+- `--mixed` (default): Moves the HEAD pointer to the specified commit and resets the staging area, but leaves the working directory unchanged.
+
+  ```sh
+  git reset --mixed <commit>
+  ```
+
+  Example:
+
+  ```sh
+  $ git reset --mixed HEAD~1
+  ```
+
+- `--hard`: Moves the HEAD pointer to the specified commit and resets both the staging area and working directory to match the commit.
+
+  ```sh
+  git reset --hard <commit>
+  ```
+
+  Example:
+
+  ```sh
+  $ git reset --hard HEAD~1
+  ```
+
+#### 4. Reset to a Specific File
+
+To reset a specific file in the working directory to match the latest commit, use:
+
+```sh
+git checkout HEAD -- <file>
+```
+
+Example:
+
+```sh
+$ git checkout HEAD -- README.md
+```
+
+#### 5. Reset to a Remote Branch
+
+To reset the current branch to match a remote branch, use:
+
+```sh
+git reset --hard origin/<branch-name>
+```
+
+Example:
+
+```sh
+$ git reset --hard origin/main
+```
+
+#### 6. Reset to a Specific Commit and Keep Changes
+
+To reset to a specific commit but keep the changes in the working directory, use:
+
+```sh
+git reset --keep <commit>
+```
+
+Example:
+
+```sh
+$ git reset --keep 1a2b3c4
+```
+
+Use `git reset` with caution, especially with the `--hard` option, as it can permanently delete changes from your working directory and staging area.
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
