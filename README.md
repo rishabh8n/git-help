@@ -90,6 +90,38 @@ Unstaged changes after reset:
 M	README.md
 ```
 
+### 6. View Commit History
+
+To view the commit history of your repository, use:
+
+```sh
+git log
+```
+
+Example:
+
+```sh
+$ git log
+commit 1a2b3c4
+Author: Your Name <you@example.com>
+Date:   Mon Oct 2 12:34:56 2023 +0000
+
+    Initial commit
+```
+
+#### Basic Flags
+
+- `--oneline`: Show each commit on a single line.
+- `--graph`: Display an ASCII graph of the branch and merge history.
+- `--decorate`: Add names of branches or tags of commits shown.
+
+Example with flags:
+
+```sh
+$ git log --oneline --graph --decorate
+* 1a2b3c4 (HEAD -> master) Initial commit
+```
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
