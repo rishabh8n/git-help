@@ -241,6 +241,72 @@ Fast-forward
 
 If there are conflicts during the merge, Git will prompt you to resolve them before completing the merge.
 
+### 12. Resolve Merge Conflicts
+
+When you encounter a merge conflict, Git will mark the conflicted areas in the affected files. You need to manually resolve these conflicts by editing the files.
+
+#### Steps to Resolve Merge Conflicts:
+
+1. **Identify Conflicted Files**: Git will list the files with conflicts after a merge attempt.
+
+   Example:
+
+   ```sh
+   $ git status
+   On branch main
+   You have unmerged paths.
+     (fix conflicts and run "git commit")
+     (use "git merge --abort" to abort the merge)
+
+   Unmerged paths:
+     (use "git add <file>..." to mark resolution)
+     both modified:   file.txt
+   ```
+
+2. **Open Conflicted Files**: Open the files in your code editor. Conflicted areas will be marked like this:
+
+   ```diff
+   <<<<<<< HEAD
+   Your changes
+   =======
+   Changes from the branch being merged
+   >>>>>>> branch-name
+   ```
+
+3. **Resolve Conflicts**: Edit the file to resolve the conflicts. Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) and make the necessary changes.
+
+4. **Stage Resolved Files**: After resolving the conflicts, stage the resolved files.
+
+   ```sh
+   git add <file>
+   ```
+
+   Example:
+
+   ```sh
+   $ git add file.txt
+   ```
+
+5. **Commit the Merge**: Finally, commit the merge to complete the process.
+
+   ```sh
+   git commit
+   ```
+
+   Example:
+
+   ```sh
+   $ git commit -m "Resolved merge conflicts"
+   ```
+
+If you want to abort the merge process, you can use:
+
+```sh
+git merge --abort
+```
+
+This will stop the merge and revert the repository to its previous state.
+
 ## Conclusion
 
 These are some of the basic Git commands to get you started with version control. For more advanced usage, refer to the [official Git documentation](https://git-scm.com/doc).
